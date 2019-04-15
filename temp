@@ -1,0 +1,18 @@
+#!/bin/bash
+celsius1=$(cat /sys/class/thermal/thermal_zone0/temp | sed 's/.\{3\}$/.&/')
+celsius2=$(cat /sys/class/thermal/thermal_zone1/temp | sed 's/.\{3\}$/.&/')
+curspeed=$(cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_cur_freq | head -n $
+faranheit1=$(echo "scale=2;((9/5) * $celsius1) + 32" |bc)
+faranheit2=$(echo "scale=2;((9/5) * $celsius2) + 32" |bc)
+echo "--------------------"
+echo "   CPU Frequency    "
+echo "   ${curspeed}      "
+echo "--------------------"
+echo "   Thermal Zone 0"
+echo "   ${celsius1} °C"
+echo "   ${faranheit1} °F"
+echo "--------------------"
+echo "   Thermal Zone 1"
+echo "   ${celsius2} °C"
+echo "   ${faranheit2} °F"
+echo "--------------------"
