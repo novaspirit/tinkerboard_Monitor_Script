@@ -12,4 +12,5 @@ run script in terminal using watch
 
 credits
 Temp monitoring code for tinkerboard
-knuxyl  --  https://tinkerboarding.co.uk/forum/archive/index.php/thread-367.html
+
+knuxyl - https://tinkerboarding.co.uk/forum/archive/index.php/thread-367.html
